@@ -21,15 +21,16 @@ import {
   MenuDivider,
   MenuItem,
   MenuList,
+  Button,
 } from "@chakra-ui/react";
 import {
   FiHome,
   FiTrendingUp,
   FiCompass,
   FiStar,
-  FiSettings,
+  FiFeather,
   FiMenu,
-  FiBell,
+  FiShoppingCart,
   FiChevronDown,
 } from "react-icons/fi";
 import { IconType } from "react-icons";
@@ -44,7 +45,7 @@ const LinkItems: Array<LinkItemProps> = [
   { name: "Trending", icon: FiTrendingUp },
   { name: "Explore", icon: FiCompass },
   { name: "Favourites", icon: FiStar },
-  { name: "Settings", icon: FiSettings },
+  { name: "Featured", icon: FiFeather },
 ];
 
 function SidebarWithNavbar({ children }: { children: ReactNode }) {
@@ -128,11 +129,12 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
         align="center"
         p="4"
         mx="4"
+        mt="10px"
         borderRadius="lg"
         role="group"
         cursor="pointer"
         _hover={{
-          bg: "cyan.400",
+          bg: "green",
           color: "white",
         }}
         {...rest}
@@ -183,7 +185,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         fontFamily="monospace"
         fontWeight="bold"
       >
-        Logo
+        helptors
       </Text>
 
       <HStack spacing={{ base: "0", md: "6" }}>
@@ -191,7 +193,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           size="lg"
           variant="ghost"
           aria-label="open menu"
-          icon={<FiBell />}
+          icon={<FiShoppingCart />}
         />
         <Flex alignItems={"center"}>
           <Menu>
@@ -208,10 +210,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
                   spacing="1px"
                   ml="2"
                 >
-                  <Text fontSize="sm">Justina Clark</Text>
-                  <Text fontSize="xs" color="gray.600">
-                    Admin
-                  </Text>
+                  <Text fontSize="sm">Account</Text>
                 </VStack>
                 <Box display={{ base: "none", md: "flex" }}>
                   <FiChevronDown />
@@ -222,11 +221,21 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
               bg={useColorModeValue("white", "gray.900")}
               borderColor={useColorModeValue("gray.200", "gray.700")}
             >
-              <MenuItem>Profile</MenuItem>
-              <MenuItem>Settings</MenuItem>
-              <MenuItem>Billing</MenuItem>
+              <MenuItem>My Account</MenuItem>
+              <MenuItem>Orders</MenuItem>
+              <MenuItem>Saved Items</MenuItem>
               <MenuDivider />
-              <MenuItem>Sign out</MenuItem>
+              <Flex alignItems="center" justifyContent="center">
+                <Button
+                  bg="green"
+                  color="white"
+                  _hover={{ bg: "white", color: "green" }}
+                  w="auto"
+                  minW="200px"
+                >
+                  Sign In
+                </Button>
+              </Flex>
             </MenuList>
           </Menu>
         </Flex>
