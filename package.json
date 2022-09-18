@@ -1,5 +1,6 @@
 {
   "name": "helptors",
+  "homepage": "https://github.com/Helptorssolutins.github.io/helptors",
   "version": "0.1.0",
   "homepage": "https://github.com/Helptorssolutins/helptors",
   "private": true,
@@ -28,6 +29,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "deploy": "gh-pages -b master -d build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -44,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
